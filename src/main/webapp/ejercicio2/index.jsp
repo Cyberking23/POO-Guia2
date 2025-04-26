@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Vacaciones</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/ejercicio2/style.css">
 </head>
 <body>
 <h2>Formulario de Datos Personales</h2>

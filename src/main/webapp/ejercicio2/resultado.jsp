@@ -5,7 +5,7 @@
 <head>
   <title>Resultado del Calculo de Vacaciones</title>
   <!-- Título de la página que se muestra en la pestaña del navegador -->
-  <link rel="stylesheet" type="text/css" href="css/resultado.css">
+  <link rel="stylesheet" type="text/css" href="../css/ejercicio2/resultado.css.css">
   <!-- Enlace al archivo CSS externo para dar estilo a la página -->
 </head>
 <body>
