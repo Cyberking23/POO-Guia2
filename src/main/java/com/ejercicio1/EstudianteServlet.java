@@ -6,6 +6,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.Date;
+
 
 @WebServlet("/procesarEstudiante")
 public class EstudianteServlet extends HttpServlet {
@@ -25,14 +29,14 @@ public class EstudianteServlet extends HttpServlet {
 
         try {
             // Validaciones de los datos ingresados
-            if (carnet == null || !carnet.matches("^[A-Za-z]{2}\\d{6}$")) {
+            if (carnet == null || !carnet.matches("^[A-Za-z]{2}\\d{4}$")) {
                 errores.append("Carnet inválido. Formato: dos letras y cuatro números.<br>");
             }
-            if (nombres == null || nombres.length() > 25) {
-                errores.append("Nombres inválidos. Máximo 25 caracteres.<br>");
+            if (nombres == null || !nombres.matches("^[A-Za-zÁÉÍÓÚáéíóúÑñ\\s]{1,25}$")) {
+                errores.append("Nombres inválidos. Solo letras y espacios, máximo 25 caracteres.<br>");
             }
-            if (apellidos == null || apellidos.length() > 25) {
-                errores.append("Apellidos inválidos. Máximo 25 caracteres.<br>");
+            if (apellidos == null || !apellidos.matches("^[A-Za-zÁÉÍÓÚáéíóúÑñ\\s]{1,25}$")) {
+                errores.append("Apellidos inválidos. Solo letras y espacios, máximo 25 caracteres.<br>");
             }
             if (direccion == null || direccion.length() > 255) {
                 errores.append("Dirección inválida. Máximo 255 caracteres.<br>");
@@ -43,8 +47,17 @@ public class EstudianteServlet extends HttpServlet {
             if (email == null || !email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
                 errores.append("Email inválido.<br>");
             }
+
             if (fechaNacimiento == null || !fechaNacimiento.matches("^\\d{2}/\\d{2}/\\d{4}$")) {
                 errores.append("Fecha inválida. Formato DD/MM/YYYY.<br>");
+            } else {
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    sdf.setLenient(false); // esto impide que acepte fechas como 32/13/2025
+                    Date fecha = sdf.parse(fechaNacimiento); // si es inválida, lanza ParseException
+                } catch (ParseException e) {
+                    errores.append("Fecha inválida. No corresponde a una fecha real.<br>");
+                }
             }
 
             // Revisar si hay errores
