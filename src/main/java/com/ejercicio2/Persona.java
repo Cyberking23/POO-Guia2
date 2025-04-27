@@ -1,4 +1,4 @@
-package ejercicio2;
+package com.ejercicio2;
 
 import java.time.LocalDate;  // Importa la clase LocalDate para trabajar con fechas.
 import java.time.temporal.ChronoUnit;  // Importa ChronoUnit para trabajar con unidades de tiempo (como años).
@@ -39,5 +39,22 @@ public class Persona {
         else if (años >= 3 && años <= 5) return 15;
         else if (años > 5) return 21;
         else return 0;
+    }
+
+    // Método para validar el salario (debe ser mayor a 0).
+    public boolean validarSalario() {
+        return salario > 0;
+    }
+
+    // Método para validar que la fecha de ingreso no sea posterior a la fecha actual.
+    public boolean validarFechaIngreso() {
+        return !fechaIngreso.isAfter(LocalDate.now());
+    }
+
+    // Método para validar que todos los campos no estén vacíos.
+    public static boolean validarCampos(String nombre, String salarioStr, String fechaIngresoStr) {
+        return nombre != null && !nombre.trim().isEmpty() &&
+                salarioStr != null && !salarioStr.trim().isEmpty() &&
+                fechaIngresoStr != null && !fechaIngresoStr.trim().isEmpty();
     }
 }
