@@ -23,7 +23,7 @@ Fecha: Abril 2025 -->
     </div>
 
     <div class="link-container">
-        <a href="/ejercicio2/index.jsp" class="button">Calculo de vacaciones  </a>
+        <a href="Ejercicio2.jsp" class="button">Calculo de vacaciones  </a>
     </div>
 
 

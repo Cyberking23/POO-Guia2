@@ -1,6 +1,9 @@
 <!-- Autor del ejercicio 1 - Victor Guevara
 Fecha: Abril 2025 -->
 
+<!-- Autor del ejercicio 2 - Carlos Merino
+Fecha: Abril 2025 -->
+
 <!-- Autor del ejercicio 3 - Rodrigo Pineda
 Fecha: Abril 2025 -->
 <!DOCTYPE html>
@@ -20,7 +23,7 @@ Fecha: Abril 2025 -->
     </div>
 
     <div class="link-container">
-        <a href="/ejercicio2/index.jsp" class="button">Calculo de vacaciones  </a>
+        <a href="Ejercicio2.jsp" class="button">Calculo de vacaciones  </a>
     </div>
 
 
