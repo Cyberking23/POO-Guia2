@@ -1,6 +1,9 @@
 <!-- Autor del ejercicio 1 - Victor Guevara
 Fecha: Abril 2025 -->
 
+<!-- Autor del ejercicio 2 - Carlos Merino
+Fecha: Abril 2025 -->
+
 <!-- Autor del ejercicio 3 - Rodrigo Pineda
 Fecha: Abril 2025 -->
 <!DOCTYPE html>
