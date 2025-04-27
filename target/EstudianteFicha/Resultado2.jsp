@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="com.ejercicio2.Persona, java.time.LocalDate" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Resultado del Cálculo de Vacaciones</title>
+  <title>Resultado del Calculo de Vacaciones</title>
   <link rel="stylesheet" type="text/css" href="css/Resultado2.css">
 </head>
 <body>
@@ -10,56 +10,52 @@
 <h2>Resultado de Cálculo de Vacaciones</h2>
 
 <%
-  // Obtener los parámetros enviados desde el formulario.
   String nombre = request.getParameter("nombre");
   String salarioStr = request.getParameter("salario");
   String fechaIngresoStr = request.getParameter("fechaIngreso");
 
-  // Validación de que los campos no estén vacíos.
-  if (!Persona.validarCampos(nombre, salarioStr, fechaIngresoStr)) {
+  // Se verifica si alguno de los parámetros es nulo o está vacío
+  if (nombre == null || salarioStr == null || fechaIngresoStr == null ||
+          nombre.trim().isEmpty() || salarioStr.trim().isEmpty() || fechaIngresoStr.trim().isEmpty()) {
 %>
+<!-- Si algún campo está vacío o no se ha recibido, se muestra un mensaje de advertencia -->
 <p>Todos los campos son obligatorios.</p>
-<a href="index.jsp">Volver</a>
+<a href="index.jsp">Volver</a> <!-- Enlace para volver a la página anterior -->
 <%
 } else {
+  // Si los parámetros son válidos, se intenta procesar los datos
   try {
-    // Convertir el salario a double.
     double salario = Double.parseDouble(salarioStr);
-    LocalDate fechaIngreso = LocalDate.parse(fechaIngresoStr);
+    java.time.LocalDate fechaIngreso = java.time.LocalDate.parse(fechaIngresoStr);
+    java.time.LocalDate fechaActual = java.time.LocalDate.now();
+    java.time.Period periodo = java.time.Period.between(fechaIngreso, fechaActual);
+    int anios = periodo.getYears();
 
-    // Crear el objeto Persona con los datos ingresados.
-    Persona persona = new Persona(nombre, salario, fechaIngreso);
-
-    // Validar el salario y la fecha de ingreso
-    if (!persona.validarSalario()) {
+    int diasVacaciones;
+    if (anios >= 1 && anios < 3) {
+      diasVacaciones = 10;
+    } else if (anios >= 3 && anios <= 5) {
+      diasVacaciones = 15;
+    } else if (anios > 5) {
+      diasVacaciones = 21;
+    } else {
+      diasVacaciones = 0;
+    }
 %>
-<p>El salario debe ser un número positivo mayor a cero.</p>
-<a href="index.jsp">Volver</a>
-<%
-} else if (!persona.validarFechaIngreso()) {
-%>
-<p>La fecha de ingreso no puede ser posterior a la fecha actual.</p>
-<a href="index.jsp">Volver</a>
-<%
-} else {
-  // Si todas las validaciones son correctas, calcular las vacaciones.
-  int diasVacaciones = persona.calcularVacaciones();
-%>
-
+<!-- Si todo es correcto, se muestra la tabla con los resultados -->
 <table>
   <tr><th>Campo</th><th>Valor</th></tr>
-  <tr><td>Nombre</td><td><%= persona.getNombre() %></td></tr>
-  <tr><td>Salario</td><td>$<%= persona.getSalario() %></td></tr>
-  <tr><td>Fecha de Ingreso</td><td><%= persona.getFechaIngreso() %></td></tr>
+  <tr><td>Nombre</td><td><%= nombre %></td></tr>
+  <tr><td>Salario</td><td>$<%= salario %></td></tr>
+  <tr><td>Fecha de Ingreso</td><td><%= fechaIngreso %></td></tr>
   <tr><td>Días de Vacaciones</td><td><%= diasVacaciones %></td></tr>
 </table>
 <a href="index.jsp">Volver</a>
-
 <%
-  }
 } catch (Exception e) {
 %>
-<p>Error al procesar los datos. Asegúrate de ingresarlos correctamente.</p>
+<!-- Mensaje de error si hay un problema al procesar los datos -->
+<p> error al procesar los datos. Asegúrate de ingresarlos correctamente.</p>
 <a href="index.jsp">Volver</a>
 <%
     }
