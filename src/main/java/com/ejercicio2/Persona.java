@@ -57,4 +57,8 @@ public class Persona {
                 salarioStr != null && !salarioStr.trim().isEmpty() &&
                 fechaIngresoStr != null && !fechaIngresoStr.trim().isEmpty();
     }
+    public boolean validarNombre() {
+        // La expresión regular [a-zA-Z\s]+ permite letras mayúsculas, minúsculas y espacios.
+        return nombre.matches("^[a-zA-Z\\s]+$");
+    }
 }
