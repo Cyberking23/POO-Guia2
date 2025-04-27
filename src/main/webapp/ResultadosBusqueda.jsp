@@ -85,16 +85,21 @@
     <h1>Resultados de Búsqueda</h1>
 
     <%
+        //verifica que haya algo
+
         List<Contacto> resultados = (List<Contacto>) request.getAttribute("resultados");
         if (resultados == null || resultados.isEmpty()) {
     %>
     <div class="no-resultados">
+        <!-- sino está el nombre devuelve -->
         No se encontraron contactos con ese nombre.
     </div>
     <% } else { %>
     <div class="listado">
         <ul>
-            <% for (Contacto c : resultados) { %>
+            <% for (Contacto c : resultados) {
+            //itera hasta donde haya
+            %>
             <li>
                 <strong>Nombre:</strong> <%= c.getNombre() %> |
                 <strong>Teléfono:</strong> <%= c.getTelefono() %> |

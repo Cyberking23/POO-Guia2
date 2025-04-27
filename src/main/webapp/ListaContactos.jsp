@@ -85,6 +85,7 @@
   <h1>Lista de Contactos</h1>
 
   <%
+    //comprueba que no esté vacío
     List<Contacto> lista = (List<Contacto>) request.getAttribute("contactos");
     if (lista == null || lista.isEmpty()) {
   %>
@@ -94,7 +95,8 @@
   <% } else { %>
   <div class="listado">
     <ul>
-      <% for (Contacto c : lista) { %>
+      <% for (Contacto c : lista) {
+        //itera hasta donde se encuentre%>
       <li>
         <strong>Nombre:</strong> <%= c.getNombre() %> |
         <strong>Teléfono:</strong> <%= c.getTelefono() %> |

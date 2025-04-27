@@ -3,9 +3,12 @@
 
 <html>
 <head>
-  <title>Agenda de contactos</title>
+  <title>agenda de contactos</title>
+  <!-- importar fuentes y css externo -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
   <link rel="stylesheet" type="text/css" href="./css/ejercicio3/index.css">
+
+  <!-- estilos adicionales para mensajes y errores -->
   <style>
     .mensaje {
       background-color: #d4edda;
@@ -30,18 +33,22 @@
 <div class="container">
   <h1>Agenda de contactos</h1>
 
+  <!-- mostrar mensaje de éxito si existe -->
   <% if (request.getAttribute("mensaje") != null) { %>
   <div class="mensaje"><%= request.getAttribute("mensaje") %></div>
   <% } %>
+
+  <!-- mostrar mensaje de error si existe -->
   <% if (request.getAttribute("error") != null) { %>
   <div class="error"><%= request.getAttribute("error") %></div>
   <% } %>
 
   <div class="formulario">
     <form action="AgendaServlet" method="post" id="formularioPrincipal">
-      <h2>Gestión de Contactos</h2>
+      <h2>Gestión de contactos</h2>
 
       <% String accionActual = (String) request.getAttribute("accionActual"); %>
+      <!-- selector de acción -->
       <select name="accion" id="accion" class="select-estilizado" required>
         <option value="">Selecciona una opción</option>
         <option value="agregar" <%= "agregar".equals(accionActual) ? "selected" : "" %>>Agregar nuevo contacto</option>
@@ -49,8 +56,9 @@
         <option value="buscar" <%= "buscar".equals(accionActual) ? "selected" : "" %>>Buscar contacto por nombre</option>
       </select>
 
+      <!-- campos para agregar contacto -->
       <div id="camposAgregar" style="display:none; margin-top: 15px;">
-        <input type="text" name="nombre" placeholder="Nombre completo" pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+" maxlength="50" title="El nombre no debe contener números ni caracteres especiales">
+        <input type="text" name="nombre" placeholder="Nombre completo" pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+" maxlength="50" title="el nombre no debe contener números ni caracteres especiales">
         <input type="text" name="telefono"
                placeholder="Número de teléfono"
                pattern="\d{4}-\d{4}"
@@ -59,22 +67,26 @@
         <input type="email" name="correo" placeholder="Correo electrónico">
       </div>
 
+      <!-- campo para buscar contacto -->
       <div id="campoBuscar" style="display:none; margin-top: 15px;">
         <input type="text" name="nombreBuscar" placeholder="Nombre a buscar">
       </div>
 
-      <input type="submit" value="Enviar" style="margin-top: 20px;">
+      <!-- botón de enviar -->
+      <input type="submit" value="enviar" style="margin-top: 20px;">
     </form>
   </div>
 </div>
 
 <script>
+  // esperar a que cargue el documento
   document.addEventListener("DOMContentLoaded", function() {
     const accion = document.getElementById("accion");
     const camposAgregar = document.getElementById("camposAgregar");
     const campoBuscar = document.getElementById("campoBuscar");
     const formulario = document.getElementById("formularioPrincipal");
 
+    // mostrar campos según la acción seleccionada
     mostrarCamposPorAccion();
     accion.addEventListener("change", mostrarCamposPorAccion);
 
@@ -91,6 +103,7 @@
       }
     }
 
+    // validar el formulario antes de enviarlo
     formulario.addEventListener("submit", function(event) {
       const accionSeleccionada = accion.value;
 
@@ -132,6 +145,7 @@
       }
     });
 
+    // ocultar mensajes de éxito o error automáticamente después de 5 segundos
     setTimeout(function() {
       const mensajes = document.querySelectorAll('.mensaje, .error');
       mensajes.forEach(function(mensaje) {
