@@ -30,10 +30,15 @@
     // Crear el objeto Persona con los datos ingresados.
     Persona persona = new Persona(nombre, salario, fechaIngreso);
 
-    // Validar el salario y la fecha de ingreso
-    if (!persona.validarSalario()) {
+    // Validar el nombre, salario y fecha de ingreso
+    if (!persona.validarNombre()) {
 %>
-<p>El salario debe ser mayor a cero.</p>
+<p>El nombre ingresado no es válido. Asegúrese de ingresar solo letras y espacios.</p>
+<a href="index.jsp">Volver</a>
+<%
+} else if (!persona.validarSalario()) {
+%>
+<p>El salario debe ser un número positivo mayor a cero.</p>
 <a href="index.jsp">Volver</a>
 <%
 } else if (!persona.validarFechaIngreso()) {
