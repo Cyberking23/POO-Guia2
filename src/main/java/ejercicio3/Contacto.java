@@ -1,4 +1,4 @@
-package com.ejercicio1.ejercicio3;
+package ejercicio3;
 
 // clase que representa un contacto
 public class Contacto {
