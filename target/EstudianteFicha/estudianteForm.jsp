@@ -13,7 +13,7 @@ Fecha: Abril 2025 -->
     <h2>Ficha del Estudiante</h2>
     <form method="post" action="procesarEstudiante">
         <label for="carnet">Carnet:</label>
-        <input type="text" name="carnet" id="carnet" required placeholder="Ejemplo: GC242653">
+        <input type="text" name="carnet" id="carnet" required placeholder="Ejemplo: GC2426">
 
         <label for="nombres">Nombres:</label>
         <input type="text" name="nombres" id="nombres" required>
