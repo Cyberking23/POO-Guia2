@@ -6,6 +6,9 @@ Fecha: Abril 2025 -->
 
 <!-- Autor del ejercicio 3 - Rodrigo Pineda
 Fecha: Abril 2025 -->
+
+<!-- Autor del ejercicio 4 - Joaquin Fuentes
+Fecha: Abril 2025 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,6 +32,10 @@ Fecha: Abril 2025 -->
 
     <div class="link-container">
         <a href="Ejercicio3.jsp" class="button">Agenda de Contactos</a>
+    </div>
+
+    <div class="link-container">
+        <a href="VehiculoForm.jsp" class="button">Importadora de Vehiculos</a>
     </div>
 
 </div>
