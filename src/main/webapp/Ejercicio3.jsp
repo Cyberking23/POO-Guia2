@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<%@ page import="ejercicio3.Contacto, java.util.List" %>
+<%@ page import="com.ejercicio3.Contacto, java.util.List" %>
 
 <!-- autor: rodrigo daniel pineda ardón fecha: 26/04/2025
 descripción: página jsp que permite agregar, listar o buscar contactos en un solo formulario -->
