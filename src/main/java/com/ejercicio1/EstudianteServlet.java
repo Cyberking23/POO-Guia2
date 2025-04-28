@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 
+
 @WebServlet("/procesarEstudiante")
 public class EstudianteServlet extends HttpServlet {
     @Override
@@ -55,6 +56,10 @@ public class EstudianteServlet extends HttpServlet {
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     sdf.setLenient(false); // esto impide que acepte fechas como 32/13/2025
                     Date fecha = sdf.parse(fechaNacimiento); // si es inválida, lanza ParseException
+                    Date fechaActual = new Date();
+                    if (fecha.after(fechaActual)) {
+                        errores.append("La fecha de nacimiento no puede ser posterior a la fecha actual.<br>");
+                    }
                 } catch (ParseException e) {
                     errores.append("Fecha inválida. No corresponde a una fecha real.<br>");
                 }

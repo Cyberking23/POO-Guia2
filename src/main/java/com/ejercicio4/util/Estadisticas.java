@@ -1,7 +1,7 @@
 /*Autor Joaquin Fuentes
 Fecha: Abril 2025*/
-package ejercicio4.util;
-import ejercicio4.model.Vehiculo;
+package com.ejercicio4.util;
+import com.ejercicio4.model.Vehiculo;
 import java.util.List;
 
 /**

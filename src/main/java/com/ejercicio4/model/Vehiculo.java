@@ -1,6 +1,6 @@
 /*Autor Joaquin Fuentes
 Fecha: Abril 2025*/
-package ejercicio4.model;
+package com.ejercicio4.model;
 
 
 /**

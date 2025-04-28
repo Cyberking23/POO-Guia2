@@ -2,8 +2,8 @@
 Fecha: Abril 2025 -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="ejercicio4.model.Vehiculo" %>
-<%@ page import="ejercicio4.util.Estadisticas" %>
+<%@ page import="com.ejercicio4.model.Vehiculo" %>
+<%@ page import="com.ejercicio4.util.Estadisticas" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="jakarta.servlet.http.HttpSession" %>

@@ -86,7 +86,7 @@ Fecha: Abril 2025 -->
     </div>
     <% } %>
 
-    <%-- Formulario HTML que envía los datos a la URL "ejercicio4" utilizando el método HTTP POST. --%>
+    <%-- Formulario HTML que envía los datos a la URL "com.ejercicio4" utilizando el método HTTP POST. --%>
     <form action="ejercicio4" method="post">
         <div class="form-group">
             <label for="nombre">Nombre completo del cliente:</label>

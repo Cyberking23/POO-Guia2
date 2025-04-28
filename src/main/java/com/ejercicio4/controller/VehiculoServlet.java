@@ -1,9 +1,8 @@
 /*Autor Joaquin Fuentes
 Fecha: Abril 2025*/
-package ejercicio4.controller;
+package com.ejercicio4.controller;
 
-import ejercicio4.model.Vehiculo;
-import ejercicio4.util.Estadisticas;
+import com.ejercicio4.model.Vehiculo;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * Servlet para manejar el registro de vehículos y cálculo de estadísticas
  */
-// Esta anotación declara que esta clase es un servlet y mapea las peticiones a la URL "/ejercicio4" a este servlet.
+// Esta anotación declara que esta clase es un servlet y mapea las peticiones a la URL "/com.ejercicio4" a este servlet.
 @WebServlet(name = "VehiculoServlet", value = {"/ejercicio4"})
 public class VehiculoServlet extends HttpServlet {
 

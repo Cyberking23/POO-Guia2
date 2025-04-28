@@ -1,6 +1,6 @@
-package ejercicio3;
+package com.ejercicio3;
 
-import ejercicio3.Contacto;
+import com.ejercicio3.Contacto;
 
 import java.io.IOException;
 import java.util.ArrayList;

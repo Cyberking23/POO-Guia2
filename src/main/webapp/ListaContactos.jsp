@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<%@ page import="ejercicio3.Contacto, java.util.List" %>
+<%@ page import="com.ejercicio3.Contacto, java.util.List" %>
 
 <html>
 <head>
