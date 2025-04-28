@@ -1,3 +1,7 @@
+<%--
+  Autor: Gerardo Saz
+  Fecha: 27/4/2025
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.List" %>

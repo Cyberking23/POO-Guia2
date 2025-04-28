@@ -1,3 +1,7 @@
+<%--
+  Autor: Gerardo Saz
+  Fecha: 27/4/2025
+--%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="com.ejercicio5.model.ClienteDAO" %>
 <%@ page import="com.ejercicio5.classes.Cliente" %>

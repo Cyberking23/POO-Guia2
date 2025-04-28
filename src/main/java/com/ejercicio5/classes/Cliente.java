@@ -1,3 +1,7 @@
+/*
+Autor: Gerardo Saz
+Fecha: 27/4/2025
+ */
 package com.ejercicio5.classes;
 
 import com.ejercicio5.interfaces.ITotalPago;
