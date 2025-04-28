@@ -135,8 +135,6 @@ Fecha: Abril 2025 -->
     userSession.setAttribute("vehiculos", vehiculos);
   }
 
-  // Agregar el nuevo vehículo a la lista obtenida de la sesión.
-  vehiculos.add(nuevoVehiculo);
 %>
 
 <h2>Vehículos Registrados</h2>
